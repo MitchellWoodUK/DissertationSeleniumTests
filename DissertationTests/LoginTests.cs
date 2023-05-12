@@ -21,8 +21,6 @@ namespace DissertationProject.Tests
             driver = new ChromeDriver(@"\Drivers\chromedriver_win32", ops);
         }
 
-
-
         [Test]
         public void canLoginToAnAccount()
         {
@@ -36,14 +34,10 @@ namespace DissertationProject.Tests
             IWebElement passwordInput = driver.FindElement(By.Id("Input_Password"));
             passwordInput.SendKeys("Pass123!");
 
-            Thread.Sleep(3000);
             // Submit the form
 
             IWebElement register = driver.FindElement(By.Id("login-submit"));
             register.Click();
-
-            // Wait for the registration confirmation page to load
-            Thread.Sleep(1000);
 
             // Verify that the registration was successful
             //Assert
@@ -67,10 +61,7 @@ namespace DissertationProject.Tests
             // Submit the form
             IWebElement register = driver.FindElement(By.Id("registerSubmit"));
             register.Click();
-            Thread.Sleep(3000);
-            // Wait for the error message to be displayed
             IWebElement error = driver.FindElement(By.ClassName("text-danger"));
-
 
             // Verify that the error message is displayed
             Assert.IsTrue(error.Displayed);

@@ -31,27 +31,19 @@ namespace DissertationProject.Tests
             // Fill in the registration form inputs
             IWebElement fnameInput = driver.FindElement(By.Id("Input_Fname"));
             fnameInput.SendKeys("John");
-
             IWebElement snameInput = driver.FindElement(By.Id("Input_Sname"));
             snameInput.SendKeys("Doe");
-
             IWebElement emailInput = driver.FindElement(By.Id("Input_Email"));
             emailInput.SendKeys("johndoe@example.com");
-
             IWebElement passwordInput = driver.FindElement(By.Id("Input_Password"));
             passwordInput.SendKeys("Pass123!");
 
             IWebElement confirmPasswordInput = driver.FindElement(By.Id("Input_ConfirmPassword"));
             confirmPasswordInput.SendKeys("Pass123!");
-            Thread.Sleep(3000);
             // Submit the form
 
             IWebElement register = driver.FindElement(By.Id("registerSubmit"));
             register.Click();
-
-
-            // Wait for the registration confirmation page to load
-            Thread.Sleep(1000);
 
             // Verify that the registration was successful
             //Assert
