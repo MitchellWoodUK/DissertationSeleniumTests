@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Drivers\chromedriver_win32\.vs\chromedriver\project-colors.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Drivers\chromedriver_win32\.vs\chromedriver\v17\.suo" />
+    <None Include="Drivers\chromedriver_win32\.vs\chromedriver\v17\TestStore\0\000.testlog" />
+    <None Include="Drivers\chromedriver_win32\.vs\chromedriver\v17\TestStore\0\testlog.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
