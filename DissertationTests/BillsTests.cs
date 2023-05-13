@@ -181,7 +181,7 @@ namespace DissertationProject.Tests
             IAlert alert = driver.SwitchTo().Alert();
             alert.Accept();
             //Assert
-            Assert.IsTrue(driver.Url.Contains("Transaction/ViewAll"));
+            Assert.IsTrue(driver.Url.Contains("Bills/ViewAll"));
         }
 
         [Test]
