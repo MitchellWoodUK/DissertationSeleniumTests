@@ -24,6 +24,8 @@ namespace DissertationProject.Tests
         [Test]
         public void NavigateToBills()
         {
+            // Maximize the browser window
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -41,21 +43,23 @@ namespace DissertationProject.Tests
 
             // Go to the transaction page
             IWebElement scroll = driver.FindElement(By.TagName("body"));
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
                 scroll.SendKeys(Keys.PageDown);
             }
-            IWebElement transactions = driver.FindElement(By.Id("transactionbtn"));
-            transactions.Click();
+            IWebElement bills = driver.FindElement(By.Id("billid"));
+            bills.Click();
 
 
             //Assert
-            Assert.IsTrue(driver.Url.Contains("Transaction/ViewAll"));
+            Assert.IsTrue(driver.Url.Contains("Bills/ViewAll"));
         }
 
         [Test]
         public void CreateBillCorrect()
         {
+            // Maximize the browser window
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -71,34 +75,38 @@ namespace DissertationProject.Tests
 
             // Go to the transaction page
             IWebElement scroll = driver.FindElement(By.TagName("body"));
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 5; i++)
             {
                 scroll.SendKeys(Keys.PageDown);
             }
-            IWebElement transactions = driver.FindElement(By.Id("transactionbtn"));
-            transactions.Click();
-            IWebElement create = driver.FindElement(By.Id("newTransaction"));
+            IWebElement bills = driver.FindElement(By.Id("billid"));
+            bills.Click();
+            IWebElement create = driver.FindElement(By.Id("newbillbtn"));
             create.Click();
             //Enter the correct details for a transaction
             IWebElement name = driver.FindElement(By.Id("name"));
-            name.SendKeys("Cinema");
+            name.SendKeys("Electric");
             IWebElement description = driver.FindElement(By.Id("description"));
-            description.SendKeys("Another film");
+            description.SendKeys("Monthly Bill");
             IWebElement amount = driver.FindElement(By.Id("amount"));
-            amount.SendKeys("14.99");
-            IWebElement type = driver.FindElement(By.Id("transactionType"));
-            type.SendKeys("Entertainment");
+            amount.SendKeys("140");
+            IWebElement type = driver.FindElement(By.Id("billType"));
+            type.SendKeys("Electric");
+            IWebElement due = driver.FindElement(By.Id("dateDue"));
+            due.SendKeys("1");
             IWebElement submit = driver.FindElement(By.Id("submitbtn"));
             submit.Click();
 
 
             //Assert
-            Assert.IsTrue(driver.Url.Contains("Transaction/ViewAll"));
+            Assert.IsTrue(driver.Url.Contains("Bills/ViewAll"));
         }
 
         [Test]
         public void CreateBillMissingValue()
         {
+            // Maximize the browser window
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -114,34 +122,38 @@ namespace DissertationProject.Tests
 
             // Go to the transaction page
             IWebElement scroll = driver.FindElement(By.TagName("body"));
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 5; i++)
             {
                 scroll.SendKeys(Keys.PageDown);
             }
-            IWebElement transactions = driver.FindElement(By.Id("transactionbtn"));
-            transactions.Click();
-            IWebElement create = driver.FindElement(By.Id("newTransaction"));
+            IWebElement bills = driver.FindElement(By.Id("billid"));
+            bills.Click();
+            IWebElement create = driver.FindElement(By.Id("newbillbtn"));
             create.Click();
             //Enter the correct details for a transaction
-            IWebElement name = driver.FindElement(By.Id("name"));
-            name.SendKeys("Cinema");
-
+            
+            IWebElement description = driver.FindElement(By.Id("description"));
+            description.SendKeys("Monthly Bill");
             IWebElement amount = driver.FindElement(By.Id("amount"));
-            amount.SendKeys("14.99");
-            IWebElement type = driver.FindElement(By.Id("transactionType"));
-            type.SendKeys("Entertainment");
+            amount.SendKeys("140");
+            IWebElement type = driver.FindElement(By.Id("billType"));
+            type.SendKeys("Electric");
+            IWebElement due = driver.FindElement(By.Id("dateDue"));
+            due.SendKeys("1");
             IWebElement submit = driver.FindElement(By.Id("submitbtn"));
             submit.Click();
 
 
             //Assert
-            Assert.IsTrue(driver.Url.Contains("Transaction/ViewAll"));
+            Assert.IsTrue(driver.Url.Contains("Bills/ViewAll"));
         }
 
 
         [Test]
         public void DeleteBill()
         {
+            // Maximize the browser window
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -161,8 +173,8 @@ namespace DissertationProject.Tests
             {
                 scroll.SendKeys(Keys.PageDown);
             }
-            IWebElement transactions = driver.FindElement(By.Id("transactionbtn"));
-            transactions.Click();
+            IWebElement bills = driver.FindElement(By.Id("billid"));
+            bills.Click();
             IWebElement delete = driver.FindElement(By.Id("deletebtn"));
             delete.Click();
             // switch to the alert, accept it, and then switch back to the main window
@@ -175,6 +187,8 @@ namespace DissertationProject.Tests
         [Test]
         public void TestBackToBills()
         {
+            // Maximize the browser window
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -190,21 +204,20 @@ namespace DissertationProject.Tests
 
             // Go to the transaction page
             IWebElement scroll = driver.FindElement(By.TagName("body"));
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 5; i++)
             {
                 scroll.SendKeys(Keys.PageDown);
             }
-            IWebElement transactions = driver.FindElement(By.Id("transactionbtn"));
-            transactions.Click();
-            IWebElement create = driver.FindElement(By.Id("newTransaction"));
+            IWebElement bills = driver.FindElement(By.Id("billid"));
+            bills.Click();
+            IWebElement create = driver.FindElement(By.Id("newbillbtn"));
             create.Click();
             //Click the back button
             IWebElement back = driver.FindElement(By.Id("backbtn"));
             back.Click();
 
-
             //Assert
-            Assert.IsTrue(driver.Url.Contains("Transaction/ViewAll"));
+            Assert.IsTrue(driver.Url.Contains("Bills/ViewAll"));
         }
     }
 }
