@@ -25,6 +25,8 @@ namespace DissertationProject.Tests
         [Test]
         public void AdminRemoveFamily()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
             // Fill in the registration form inputs

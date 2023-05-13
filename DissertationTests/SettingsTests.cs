@@ -25,6 +25,8 @@ namespace DissertationProject.Tests
         [Test]
         public void editAllUserData()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -69,10 +71,12 @@ namespace DissertationProject.Tests
         public void editSingleUserData()
         {
             //Arrange
-           
+
 
             //Act
             //Go to the login page
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login"); 
             // Fill in the login form inputs
             IWebElement emailInput = driver.FindElement(By.Id("Input_Email"));
@@ -111,6 +115,8 @@ namespace DissertationProject.Tests
 
             //Act
             //Go to the login page
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
             // Fill in the login form inputs
             IWebElement emailInput = driver.FindElement(By.Id("Input_Email"));
@@ -157,6 +163,8 @@ namespace DissertationProject.Tests
 
             //Act
             //Go to the login page
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
             // Fill in the login form inputs
             IWebElement emailInput = driver.FindElement(By.Id("Input_Email"));
@@ -200,6 +208,8 @@ namespace DissertationProject.Tests
             bool isDisplayed = false;
 
             //Act
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             //Go to the login page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
             // Fill in the login form inputs
@@ -246,6 +256,8 @@ namespace DissertationProject.Tests
             bool isDisplayed = false;
 
             //Act
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             //Go to the login page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
             // Fill in the login form inputs
@@ -292,6 +304,8 @@ namespace DissertationProject.Tests
             bool isDisplayed = false;
 
             //Act
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             //Go to the login page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
             // Fill in the login form inputs
@@ -338,6 +352,8 @@ namespace DissertationProject.Tests
             bool isDisplayed = false;
 
             //Act
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             //Go to the login page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
             // Fill in the login form inputs

@@ -24,6 +24,8 @@ namespace DissertationProject.Tests
         [Test]
         public void NavigateToTransactions()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -56,6 +58,8 @@ namespace DissertationProject.Tests
         [Test]
         public void CreateTransactionCorrect()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -99,6 +103,8 @@ namespace DissertationProject.Tests
         [Test]
         public void CreateTransactionMissingValue()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -142,6 +148,8 @@ namespace DissertationProject.Tests
         [Test]
         public void DeleteTransaction()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -175,6 +183,8 @@ namespace DissertationProject.Tests
         [Test]
         public void DeletePastMonthTransaction()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
@@ -208,6 +218,8 @@ namespace DissertationProject.Tests
         [Test]
         public void TestBackToTransactions()
         {
+            //Make the window fullscreen
+            driver.Manage().Window.Maximize();
             // Navigate to the register page
             driver.Navigate().GoToUrl("https://localhost:7170/Identity/Account/Login");
 
